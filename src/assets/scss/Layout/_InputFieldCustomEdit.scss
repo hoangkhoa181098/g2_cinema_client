@@ -1,0 +1,140 @@
+.form__group--edit {
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    margin: $mg-10 0;
+
+    width: 35%;
+    height: 80px;
+
+    .label--edit {
+        @include styleText($color-black-1, $fs-14, $fw-400);
+
+        margin-left: $mg-5;
+
+        .label--icon {
+            margin-right: $mg-5;
+        }
+    }
+
+    .form__control--edit {
+
+        width: 100%;
+        max-width: 320px;
+
+        padding: $pd-10;
+
+        background: transparent;
+
+        outline: none;
+
+        border: 1px solid $color-gray-2;
+        border-radius: 5px;
+
+        font-size: $fs-14;
+
+        transition: all .3s ease;
+
+        &:focus {
+            border: 1px solid $color-gray-1;
+        }
+
+        &.invalid {
+            border: 1.5px solid $color-red-0;
+        }
+
+        &:disabled {
+            background-color: #dee1ec;
+
+            cursor: no-drop;
+        }
+    }
+
+    .form__error--edit {
+        @include styleText($color-red-0, $fs-12, $fw-400);
+
+        position: relative;
+        top: -20px;
+    }
+
+    .fa-info {
+
+        position: relative;
+        top: -30px;
+        left: 325px;
+
+        color: $color-red-0;
+        font-size: $fs-10;
+
+        width: 20px;
+        height: 20px;
+        line-height: 18px;
+
+        text-align: center;
+
+        border: 1px solid $color-red-0;
+        border-radius: 50%;
+    }
+
+    .fa-eye {
+        position: relative;
+        top: -30px;
+        left: 325px;
+
+        color: $color-black-1;
+        font-size: $fs-16 + 2;
+
+        width: 20px;
+        height: 20px;
+
+        text-align: center;
+
+        cursor: pointer;
+
+        z-index: 7;
+
+        &:hover {
+            color: $color-blue-0;
+        }
+    }
+}
+
+//Responsive 
+
+.form__group--edit {
+
+    @include responsive("extra-large") {
+        width: 45%;
+
+        margin-right: $mg-5;
+    }
+
+    @include responsive("large") {
+        width: 100%;
+
+        .form__control--edit {
+            
+            max-width: 550px;
+        }
+
+        .fa-info, .fa-eye {
+            
+            left: 555px;
+        }
+    }
+
+    @include responsive("medium") {
+
+        .form__control--edit {
+            max-width: 450px;
+        }
+
+        .fa-info, .fa-eye {
+            
+            left: 455px;
+        }
+    }
+}
